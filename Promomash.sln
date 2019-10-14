@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{550E8685-E385-4367-8249-E334EEC14297}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "Common\DAL\DAL.csproj", "{D1CAA1D2-0211-41D7-802E-801DA527764E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Regions", "Regions", "{778D46AF-1E3F-4A59-9106-45316F3A321F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "Regions\Api\Api.csproj", "{8F374474-77F7-4648-A8E1-115613AA90C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contracts", "Regions\Contracts\Contracts.csproj", "{00AA798A-03D2-4E6D-91DB-6314D83E77B5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D1CAA1D2-0211-41D7-802E-801DA527764E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1CAA1D2-0211-41D7-802E-801DA527764E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1CAA1D2-0211-41D7-802E-801DA527764E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1CAA1D2-0211-41D7-802E-801DA527764E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F374474-77F7-4648-A8E1-115613AA90C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F374474-77F7-4648-A8E1-115613AA90C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F374474-77F7-4648-A8E1-115613AA90C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F374474-77F7-4648-A8E1-115613AA90C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00AA798A-03D2-4E6D-91DB-6314D83E77B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00AA798A-03D2-4E6D-91DB-6314D83E77B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00AA798A-03D2-4E6D-91DB-6314D83E77B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00AA798A-03D2-4E6D-91DB-6314D83E77B5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D1CAA1D2-0211-41D7-802E-801DA527764E} = {550E8685-E385-4367-8249-E334EEC14297}
+		{8F374474-77F7-4648-A8E1-115613AA90C5} = {778D46AF-1E3F-4A59-9106-45316F3A321F}
+		{00AA798A-03D2-4E6D-91DB-6314D83E77B5} = {778D46AF-1E3F-4A59-9106-45316F3A321F}
+	EndGlobalSection
+EndGlobal

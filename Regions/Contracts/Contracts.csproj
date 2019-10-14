@@ -1,0 +1,11 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp2.2</TargetFramework>
+        <AssemblyName>Promomash.Regions.Contracts</AssemblyName>
+        <RootNamespace>Promomash.Regions.Contracts</RootNamespace>
+        <Company>Promomash</Company>
+        <Product>Promomash.Regions.Contracts</Product>
+    </PropertyGroup>
+
+</Project>
