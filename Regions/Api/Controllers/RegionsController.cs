@@ -16,7 +16,8 @@ namespace Promomash.Regions.WebApi.Controllers {
         }
 
         /// <inheritdoc />
-        // GET api/regions или api/regions?ids=4&ids=5&parentsIds=1&sortFields[Name]=desc
+        // GET api/regions
+        // GET api/regions?ids=6&ids=7&parentsIds=2&sortFields[Name]=desc&pagination.count=1&pagination.offset=1
         [HttpGet]
         public async Task<ICollection<Region>> Get([FromQuery] Query query = null) {
             var result = await _regionsManager.GetAsync(query);

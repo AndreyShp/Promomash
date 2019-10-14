@@ -48,6 +48,16 @@ namespace Promomash.Regions.WebApi.DAL.Repositories {
                 }
             }
 
+            if (query?.Pagination != null) {
+                if (query.Pagination?.Offset != null) {
+                    queryable = queryable.Skip(query.Pagination.Offset.Value);
+                }
+
+                if (query.Pagination?.Count != null) {
+                    queryable = queryable.Take(query.Pagination.Count .Value);
+                }
+            }
+
             return await ToListAsync(queryable);
         }
     }
