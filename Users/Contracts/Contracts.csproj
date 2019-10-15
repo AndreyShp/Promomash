@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp2.2</TargetFramework>
+        <AssemblyName>Promomash.Users.Contracts</AssemblyName>
+        <RootNamespace>Promomash.Users.Contracts</RootNamespace>
+        <Company>Promomash</Company>
+        <Product>Promomash.Users.Contracts</Product>
+        <PackageId>Promomash.Users.Contracts</PackageId>
+        <Authors>Promomash.Users.Contracts</Authors>
+    </PropertyGroup>
+
+</Project>

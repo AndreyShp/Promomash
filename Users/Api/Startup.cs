@@ -3,9 +3,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Promomash.Regions.WebApi.Helpers;
+using Promomash.Users.WebApi.Helpers;
 
-namespace Promomash.Regions.WebApi {
+namespace Promomash.Users.WebApi {
     public class Startup {
         public Startup(IConfiguration configuration) {
             Configuration = configuration;

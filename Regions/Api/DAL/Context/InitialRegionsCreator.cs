@@ -6,7 +6,7 @@ namespace Promomash.Regions.WebApi.DAL.Context {
     /// <summary>
     /// Отвечает за заполнение базы изначальными данными
     /// </summary>
-    public class InitialRegionsCreator {
+    internal class InitialRegionsCreator {
         public static void Create(ModelBuilder modelBuilder) {
             //TODO: вынести эти данные б json-файла
             var regions = new[] {

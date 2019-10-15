@@ -33,6 +33,7 @@ namespace Promomash.Common.DAL.Repositories {
         /// <inheritdoc />
         public async Task<T> AddAsync(T entity) {
             var result = await _dbContext.Set<T>().AddAsync(entity);
+            await _dbContext.SaveChangesAsync();
             return result.Entity;
         }
 

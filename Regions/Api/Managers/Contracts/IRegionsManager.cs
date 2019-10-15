@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq.Expressions;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Promomash.Regions.Contracts.Data;
-using Promomash.Regions.WebApi.DAL.Dto;
 
 namespace Promomash.Regions.WebApi.Managers.Contracts {
     /// <summary>
-    /// Интерфейс менеджера для работы с заказами
+    /// Интерфейс менеджера регионов
     /// </summary>
     public interface IRegionsManager {
         /// <summary>

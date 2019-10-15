@@ -9,7 +9,7 @@ namespace Promomash.Regions.WebApi.Managers {
     /// <summary>
     /// Менеджер для работы с регионами
     /// </summary>
-    public class RegionsManager : IRegionsManager {
+    internal class RegionsManager : IRegionsManager {
         private readonly IMapper _mapper;
         private readonly IRegionsRepository _regionsRepository;
 

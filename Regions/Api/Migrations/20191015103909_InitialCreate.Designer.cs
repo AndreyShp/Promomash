@@ -10,7 +10,7 @@ using Promomash.Regions.WebApi.DAL.Context;
 namespace Promomash.Regions.WebApi.Migrations
 {
     [DbContext(typeof(RegionsDbContext))]
-    [Migration("20191014180902_InitialCreate")]
+    [Migration("20191015103909_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

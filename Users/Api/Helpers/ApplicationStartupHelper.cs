@@ -3,14 +3,14 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Promomash.Regions.WebApi.DAL.Context;
-using Promomash.Regions.WebApi.DAL.Repositories;
-using Promomash.Regions.WebApi.DAL.Repositories.Contracts;
-using Promomash.Regions.WebApi.Managers;
-using Promomash.Regions.WebApi.Managers.Contracts;
-using Promomash.Regions.WebApi.Mapper;
+using Promomash.Users.WebApi.DAL.Context;
+using Promomash.Users.WebApi.DAL.Repositories;
+using Promomash.Users.WebApi.DAL.Repositories.Contracts;
+using Promomash.Users.WebApi.Managers;
+using Promomash.Users.WebApi.Managers.Contracts;
+using Promomash.Users.WebApi.Mapper;
 
-namespace Promomash.Regions.WebApi.Helpers {
+namespace Promomash.Users.WebApi.Helpers {
     /// <summary>
     /// Подготовительные действия для запуска приложения
     /// </summary>
@@ -26,12 +26,19 @@ namespace Promomash.Regions.WebApi.Helpers {
 
             services.AddSingleton(mapper);
 
-            services.AddDbContext<RegionsDbContext>(options => {
+            services.AddDbContext<UsersDbContext>(options => {
                                                         string connectionString = configuration["AppSettings:ConnectionString"];
                                                         options.UseSqlServer(connectionString);
                                                     });
-            services.AddScoped<IRegionsRepository, RegionsRepository>();
-            services.AddScoped<IRegionsManager, RegionsManager>();
+            services.AddScoped<IUsersRepository, UsersRepository>();
+            services.AddSingleton<IPasswordEncryptor>(options => {
+                                                          string salt = configuration["AppSettings:Encryptor:Salt"];
+                                                          int countIterations =
+                                                              configuration.GetValue<int>("AppSettings:Encryptor:CountIterations");
+                                                          var result = new PasswordEncryptor(salt, countIterations);
+                                                          return result;
+                                                      });
+            services.AddScoped<IUsersManager, UsersManager>();
         }
 
         /// <summary>
@@ -41,7 +48,7 @@ namespace Promomash.Regions.WebApi.Helpers {
         public static void DatabaseMigrate(IApplicationBuilder app) {
             using (var serviceScope =
                 app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope()) {
-                var context = serviceScope.ServiceProvider.GetService<RegionsDbContext>();
+                var context = serviceScope.ServiceProvider.GetService<UsersDbContext>();
                 context.Database.Migrate();
             }
         }
