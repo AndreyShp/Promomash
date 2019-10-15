@@ -29,8 +29,13 @@ namespace Promomash.Regions.Contracts.Data {
         public HashSet<long> Ids { get; set; }
         
         /// <summary>
-        /// Имя регионов для фильтрации (опционально). Поиск регистронезависим
+        /// Имя региона для фильтрации (опционально). Может быть часть имени. Поиск регистронезависим
         /// </summary>
-        public HashSet<string> Names { get; set; }
+        public string Name { get; set; }
+        
+        /// <summary>
+        /// Тип регионов для фильтрации (опционально)
+        /// </summary>
+        public HashSet<RegionType> Types { get; set; }
     }
 }

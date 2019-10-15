@@ -34,9 +34,13 @@ namespace Promomash.Regions.WebApi.DAL.Repositories {
             if (query?.ParentsIds?.Any() == true) {
                 queryable = queryable.Where(e => query.ParentsIds.Contains(e.ParentId));
             }
-
-            if (query?.Names?.Any() == true) {
-                queryable = queryable.Where(e => query.Names.Contains(e.Name));
+            
+            if (query?.Types?.Any() == true) {
+                queryable = queryable.Where(e => query.Types.Contains(e.Type));
+            }
+            
+            if (!string.IsNullOrWhiteSpace(query?.Name)) {
+                queryable = queryable.Where(e => e.Name.Contains(query.Name));
             }
 
             if (query?.SortFields?.Any() == true) {
