@@ -5,7 +5,7 @@
         <AssemblyName>Promomash.Common.DAL</AssemblyName>
         <RootNamespace>Promomash.Common.DAL</RootNamespace>
         <Company>Promomash</Company>
-        <Product>Promomash.Common.DAL</Product>
+        <Product>TestTask</Product>
     </PropertyGroup>
 
     <ItemGroup>

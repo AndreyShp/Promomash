@@ -6,7 +6,7 @@
         <RootNamespace>Promomash.Regions.WebApi</RootNamespace>
         <Company>Promomash</Company>
         <AssemblyName>Promomash.Regions.WebApi</AssemblyName>
-        <Product>Promomash.Regions.WebApi</Product>
+        <Product>TestTask</Product>
     </PropertyGroup>
 
     <ItemGroup>
