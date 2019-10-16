@@ -1,33 +1,3 @@
-<form class="registration-wizard-form" [formGroup]="form">
-  <h2 class="registration-wizard-header">Step 1</h2>
-
-  <mat-form-field class="registration-wizard-field-width">
-    <input matInput placeholder="Login" [formControl]="loginControl">
-    <mat-error *ngIf="loginControl.hasError('required') || loginControl.hasError('email')">
-      Login must be a valid email
-    </mat-error>
-  </mat-form-field>
-
-  <mat-form-field class="registration-wizard-field-width">
-    <input type="password" matInput placeholder="Password" [formControl]="passwordControl">
-    <mat-error *ngIf="passwordControl.hasError('required') || passwordControl.hasError('password')">
-      Password must contain min 1 digit and min 1 uppercase letter
-    </mat-error>
-  </mat-form-field>
-
-  <mat-form-field class="registration-wizard-field-width">
-    <input matPassword type="password" matInput placeholder="Confirm password" [formControl]="confirmPasswordControl" [errorStateMatcher]="errorMatcher">
-    <mat-error *ngIf="confirmPasswordControl.hasError('required') || form.hasError('notMatch')">
-      Confirm password must be the same with password
-    </mat-error>
-  </mat-form-field>
-
-  <mat-checkbox
-    [ngClass]="{'mat-error': agreeControl.hasError('required')}" [formControl]="agreeControl">
-    Agree to work for money and interesting task
-  </mat-checkbox>
-
-  <button class="registration-wizard-button" mat-raised-button>Go to step 2</button>
-</form>
+<registration-wizard></registration-wizard>
 
 <router-outlet></router-outlet>

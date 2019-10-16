@@ -1,0 +1,8 @@
+<div [ngSwitch]="state.step">
+    <div *ngSwitchCase="1">
+      <registration-wizard-step1 [initialState]="state" (setState)="setState($event)"></registration-wizard-step1>
+    </div>
+    <div *ngSwitchCase="2">
+      <registration-wizard-step2 [initialState]="state"></registration-wizard-step2>
+    </div>
+</div>
