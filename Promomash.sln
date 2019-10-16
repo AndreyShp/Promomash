@@ -16,6 +16,23 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "Users\Api\Api.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contracts", "Users\Contracts\Contracts.csproj", "{66F34CD0-7B4B-407E-B611-9092A8176754}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{373B6036-1E52-44F4-ABFF-6705F6B6175C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "backend", "backend", "{269F99FE-DCE1-4DDA-90EE-EAB76CF9A92F}"
+ProjectSection(SolutionItems) = preProject
+	Web\backend\index.js = Web\backend\index.js
+EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "frontend", "frontend", "{5FD1E7F1-1A1E-4185-A99F-3A98DB57E009}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "routers", "routers", "{A5E20B24-EB88-4092-BAA3-4E0DBC699245}"
+ProjectSection(SolutionItems) = preProject
+	Web\backend\routers\apiAdapter.js = Web\backend\routers\apiAdapter.js
+	Web\backend\routers\usersService.js = Web\backend\routers\usersService.js
+	Web\backend\routers\regionsService.js = Web\backend\routers\regionsService.js
+	Web\backend\routers\router.js = Web\backend\routers\router.js
+EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,5 +66,8 @@ Global
 		{00AA798A-03D2-4E6D-91DB-6314D83E77B5} = {778D46AF-1E3F-4A59-9106-45316F3A321F}
 		{9AE4F33F-B760-4460-99B0-DA782E4ECD2D} = {5B18577E-3B5B-4646-8A94-935CF6B4A3DA}
 		{66F34CD0-7B4B-407E-B611-9092A8176754} = {5B18577E-3B5B-4646-8A94-935CF6B4A3DA}
+		{269F99FE-DCE1-4DDA-90EE-EAB76CF9A92F} = {373B6036-1E52-44F4-ABFF-6705F6B6175C}
+		{5FD1E7F1-1A1E-4185-A99F-3A98DB57E009} = {373B6036-1E52-44F4-ABFF-6705F6B6175C}
+		{A5E20B24-EB88-4092-BAA3-4E0DBC699245} = {269F99FE-DCE1-4DDA-90EE-EAB76CF9A92F}
 	EndGlobalSection
 EndGlobal
