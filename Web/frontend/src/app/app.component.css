@@ -1,0 +1,19 @@
+.registration-wizard-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+    width: 300px;
+}
+  
+.registration-wizard-field-width {
+    width: 100%;
+}
+
+.registration-wizard-button {
+    margin-top: 10px;
+    display: flex; 
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
