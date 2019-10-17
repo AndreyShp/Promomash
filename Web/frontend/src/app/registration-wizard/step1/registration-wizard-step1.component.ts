@@ -5,13 +5,10 @@ import { UserWizardState, UserData } from '../registration-wizard-data.module';
 
 export class CrossFieldErrorMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
-    const invalidParent = !!(
-      control
-      && control.parent
-      && control.parent.invalid
-      && control.parent.dirty
-      && control.parent.hasError('notMatch'));
-    return (invalidParent);
+    var isNotMatch = control.parent.hasError('notMatch');
+    const isSubmitted = form && form.submitted;
+    var result = !!(control && (control.invalid || isNotMatch) && (control.dirty || control.touched || isSubmitted));
+    return result;
   }
 }
 
@@ -45,7 +42,7 @@ export class RegistrationWizardStep1Component {
       return null;
     }
 
-    const condition = psw2.value == null || psw2.value == '' || psw1.value !== psw2.value;
+    const condition = psw1.value !== psw2.value;
     var result = condition ? { 'notMatch': true} : null;
     return result;
   }
