@@ -5,3 +5,12 @@
 .registration-wizard-message.success {
     color: #1E8A19;
 }
+
+.registration-wizard-spinner-right {
+    float: right;
+}
+
+button .registration-wizard-spinner-right {
+    top: 7px;
+    left: 5px;
+}

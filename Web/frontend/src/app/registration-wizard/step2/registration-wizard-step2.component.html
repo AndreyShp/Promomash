@@ -9,6 +9,7 @@
       </mat-option>
     </mat-select>
     <mat-error *ngIf="countryControl.hasError('required')">Country is a required field</mat-error>
+    <mat-spinner class="registration-wizard-spinner-right" [diameter]="20" *ngIf="status == 3"></mat-spinner>
   </mat-form-field>
 
   <mat-form-field class="registration-wizard-field-width">
@@ -19,7 +20,11 @@
       </mat-option>
     </mat-select>
     <mat-error *ngIf="provinceControl.hasError('required')">Province is a required field</mat-error>
+    <mat-spinner class="registration-wizard-spinner-right" [diameter]="20" *ngIf="status == 4"></mat-spinner>
   </mat-form-field>
-  <button class="registration-wizard-button" mat-raised-button>Save</button>
+  <button class="registration-wizard-button" [disabled]="status == 2" mat-raised-button>
+    Save
+    <mat-spinner class="registration-wizard-spinner-right button" [diameter]="20" *ngIf="status == 2"></mat-spinner>
+  </button>
   <div *ngIf="message != null" [ngClass]="['registration-wizard-message' + (savedUserId != null ? ' success' : ' mat-error')]">{{message}}</div>
 </form>

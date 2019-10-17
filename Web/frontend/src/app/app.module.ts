@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatFormFieldModule, MatInputModule, MatCheckboxModule, MatButtonModule, MatSelectModule } from '@angular/material';
+import { MatProgressSpinnerModule, MatFormFieldModule, MatInputModule, MatCheckboxModule, MatButtonModule, MatSelectModule } from '@angular/material';
 
 import { RegistrationWizardComponent } from './registration-wizard/registration-wizard.component';
 import { RegistrationWizardStep1Component } from './registration-wizard/step1/registration-wizard-step1.component';
@@ -30,7 +30,8 @@ import { RegistrationWizardStep2Component } from './registration-wizard/step2/re
     MatButtonModule,
     MatCheckboxModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
