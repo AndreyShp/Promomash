@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Promomash.Users.Contracts;
 using Promomash.Users.Contracts.Data;
+using Promomash.Users.WebApi.Exceptions;
 using Promomash.Users.WebApi.Managers.Contracts;
 
 namespace Promomash.Users.WebApi.Controllers {
@@ -31,13 +32,19 @@ namespace Promomash.Users.WebApi.Controllers {
         [Route("~/api/users/add")] 
         [HttpPost]
         public async Task<User> Add([FromBody] User user) {
-            if (user == null || user.Id != 0 || string.IsNullOrWhiteSpace(user.Login) || string.IsNullOrWhiteSpace(user.Password) || user.RegionId <= 0) {
-                throw new ArgumentException(
-                    "Некорректные данные пользователя. Должны быть заполнены только login, password, regionId!",
-                    nameof(user));
+            try {
+                if (user == null || user.Id != 0 || string.IsNullOrWhiteSpace(user.Login) ||
+                    string.IsNullOrWhiteSpace(user.Password) || user.RegionId <= 0) {
+                    throw new ArgumentException(
+                        "Некорректные данные пользователя. Должны быть заполнены только login, password, regionId!",
+                        nameof(user));
+                }
+
+                var result = await _usersManager.AddAsync(user);
+                return result;
+            } catch (DuplicateUserException) {
+                return null;
             }
-            var result = await _usersManager.AddAsync(user);
-            return result;
         }
     }
 }

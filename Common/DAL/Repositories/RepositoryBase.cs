@@ -19,19 +19,19 @@ namespace Promomash.Common.DAL.Repositories {
         }
 
         /// <inheritdoc />
-        public async Task<ICollection<T>> GetAsync(Expression<Func<T, bool>> filter = null) {
+        public virtual async Task<ICollection<T>> GetAsync(Expression<Func<T, bool>> filter = null) {
             var queryable = GetQueryable(filter);
             return await ToListAsync(queryable);
         }
 
         /// <inheritdoc />
-        public async Task<T> GetFirstOrDefaultAsync(Expression<Func<T, bool>> filter = null) {
+        public virtual async Task<T> GetFirstOrDefaultAsync(Expression<Func<T, bool>> filter = null) {
             var queryable = GetQueryable(filter);
             return await queryable.FirstOrDefaultAsync();
         }
 
         /// <inheritdoc />
-        public async Task<T> AddAsync(T entity) {
+        public virtual async Task<T> AddAsync(T entity) {
             var result = await _dbContext.Set<T>().AddAsync(entity);
             await _dbContext.SaveChangesAsync();
             return result.Entity;

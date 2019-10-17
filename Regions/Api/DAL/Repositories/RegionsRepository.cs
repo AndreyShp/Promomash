@@ -26,13 +26,20 @@ namespace Promomash.Regions.WebApi.DAL.Repositories {
 
         /// <inheritdoc />
         public async Task<ICollection<RegionDto>> GetAsync(Query query) {
+            const int nullId = 0;
+            
             var queryable = GetQueryable();
             if (query?.Ids?.Any() == true) {
                 queryable = queryable.Where(e => query.Ids.Contains(e.Id));
             }
 
             if (query?.ParentsIds?.Any() == true) {
-                queryable = queryable.Where(e => query.ParentsIds.Contains(e.ParentId));
+                bool needWithoutParent = false;
+                if (query.ParentsIds.Contains(nullId) == true) {
+                    query.ParentsIds.Remove(nullId);
+                    needWithoutParent = true;
+                }
+                queryable = queryable.Where(e => (needWithoutParent && e.ParentId == null) || query.ParentsIds.Contains(e.ParentId.Value));
             }
             
             if (query?.Types?.Any() == true) {

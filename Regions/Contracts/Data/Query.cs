@@ -19,9 +19,9 @@ namespace Promomash.Regions.Contracts.Data {
 
         /// <summary>
         /// Идентификатор родительских регионов для фильтрации (опционально).
-        /// Если указать в качестве элемента null, то вернем также те у которых нет родителя
+        /// Если указать в качестве элемента 0, то вернем также те у которых нет родителя
         /// </summary>
-        public HashSet<long?> ParentsIds { get; set; }
+        public HashSet<long> ParentsIds { get; set; }
 
         /// <summary>
         /// Идентификаторы регионов для фильтрации (опционально)
