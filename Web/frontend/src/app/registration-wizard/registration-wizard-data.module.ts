@@ -6,6 +6,7 @@ export class UserWizardState {
 }
 
 export class UserData {
+  id: number | null;
   login: string;
   password: string;
   regionId: number

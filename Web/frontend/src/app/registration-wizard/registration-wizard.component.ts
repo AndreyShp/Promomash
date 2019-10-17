@@ -1,5 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { UserWizardState } from './registration-wizard-data.module';
+import { UserWizardState, UserData } from './registration-wizard-data.module';
 
 @Component({
   selector: 'registration-wizard',
@@ -13,6 +13,7 @@ export class RegistrationWizardComponent {
   constructor() {
     this.state = new UserWizardState();
     this.state.step = 1;
+    this.state.user = new UserData();
   }
 
   setState(state: UserWizardState) {

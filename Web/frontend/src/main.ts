@@ -10,7 +10,7 @@ if (environment.production) {
 }
 
 export function getApiUrl() {
-  return 'http://localhost:6000/api/';
+  return 'http://localhost:3000/api/';
 }
 
 const providers = [

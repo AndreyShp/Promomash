@@ -87,7 +87,6 @@ export class RegistrationWizardStep1Component {
       return;
     }
     this._state.step = 2;
-    this._state.user = new UserData();
     this._state.user.login = f.value.login;
     this._state.user.password = f.value.password;
 

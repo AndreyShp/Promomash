@@ -1,0 +1,7 @@
+.registration-wizard-message {
+    margin-top: 20px;
+}
+
+.registration-wizard-message.success {
+    color: #1E8A19;
+}
