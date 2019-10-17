@@ -7,7 +7,7 @@ namespace Promomash.Regions.WebApi.DAL.Context {
     /// Отвечает за заполнение базы изначальными данными
     /// </summary>
     internal class InitialRegionsCreator {
-        public static void Create(ModelBuilder modelBuildoer) {
+        public static void Create(ModelBuilder modelBuilder) {
             //todo: вынести эти данные в файл и анализировать иерархию регионов, чтобы не нужно было указывать идентификаторы явно
             var regions = new[] {
                                     new RegionDto {Id = 1, Name = "Китай", Type = RegionType.Country},
