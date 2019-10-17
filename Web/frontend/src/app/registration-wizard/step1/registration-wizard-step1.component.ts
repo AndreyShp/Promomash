@@ -22,17 +22,18 @@ export class CrossFieldErrorMatcher implements ErrorStateMatcher {
 })
 
 export class RegistrationWizardStep1Component {
+  private _state: UserWizardState;
+
   public form: FormGroup;
   public loginControl : FormControl;
   public passwordControl : FormControl;
   public confirmPasswordControl : FormControl;
   public agreeControl : FormControl;
   public errorMatcher = new CrossFieldErrorMatcher();
-  private state: UserWizardState;
 
   @Input('initialState')
   set initialState(state: UserWizardState) {
-    this.state = state;
+    this._state = state;
   }
 
   @Output() setState: EventEmitter<UserWizardState> = new EventEmitter();
@@ -85,12 +86,11 @@ export class RegistrationWizardStep1Component {
     if (!f.valid) {
       return;
     }
-    var state = new UserWizardState();
-    state.step = 2;
-    state.user = new UserData();
-    state.user.login = f.value.login;
-    state.user.password = f.value.password;
+    this._state.step = 2;
+    this._state.user = new UserData();
+    this._state.user.login = f.value.login;
+    this._state.user.password = f.value.password;
 
-    this.setState.emit(state);
+    this.setState.emit(this._state);
   }
 }

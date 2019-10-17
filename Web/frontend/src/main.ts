@@ -9,5 +9,13 @@ if (environment.production) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule)
+export function getApiUrl() {
+  return 'http://localhost:6000/api/';
+}
+
+const providers = [
+  { provide: 'API_URL', useFactory: getApiUrl, deps: [] }
+];
+
+platformBrowserDynamic(providers).bootstrapModule(AppModule)
   .catch(err => console.error(err));
